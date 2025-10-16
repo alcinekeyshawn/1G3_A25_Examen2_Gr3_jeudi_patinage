@@ -2,17 +2,22 @@
 # TODO : Version buggée — à corriger après exécution des tests unitaires
 # TODO : Mettre des commentaires pour identifier les bugs trouvés et comment vous les avez corrigés.
 
-def valider_notes(notes: list[float]) -> bool:
+def valider_notes(notes: list[int]) -> bool:
     """
     Vérifie que la liste de notes contient exactement 9 entiers entre -3 et +3.
     :param notes: liste de notes
     :returns: vrai si la liste et valide, sinon faux.
     """
+    #doit être un nombre entier donc int
     if len(notes) < 9:
         return False
 
     for n in notes:
+        #doit être faux si la note est supérieur à 3
         if n > 3:
+            print("Note invalide")
+            return False
+        elif n < 3:
             return False
     else:
         return True
@@ -29,6 +34,9 @@ def calculer_points(vbase: float, notes: list[int]) -> float:
     #pour la fonction de calculer les points la list note est un nombre entier pas de nombre decimal
     try:
         valider_notes(notes)
+        if notes == False:
+            print("Notes invalide")
+
 
         note_max = max(notes)
         note_min = min(notes)
