@@ -39,8 +39,8 @@ def calculer_points(vbase: float, notes: list[int]) -> float:
                 notes.remove(notes[i])
         #il faut enlever les deux notes
 
-        moyenne = sum(notes) / 9
-        # il y a maintenant seulement
+        moyenne = sum(notes) / 7
+        # il y a maintenant seulement seulement 7 notes
         total = vbase + moyenne
         return total
 

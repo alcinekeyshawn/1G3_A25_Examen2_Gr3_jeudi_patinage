@@ -7,7 +7,7 @@ from notation import *
 # -----------------------------
 # TODO : Tests unitaires pour valider_notes()
 # -----------------------------
-
+test= valider_notes(notes)
 
 
 
