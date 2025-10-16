@@ -14,6 +14,9 @@ if __name__ == "__main__":
         [5, 2, 1, 0, 2, 3, 2, 2, 3]
     ]
 
+
+
+
     print("=== Résultats de la compétition ===")
     for i in range(len(noms)):
         try:

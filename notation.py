@@ -14,28 +14,33 @@ def valider_notes(notes: list[float]) -> bool:
     for n in notes:
         if n > 3:
             return False
+    else:
+        return True
 
-    return True
 
 
-def calculer_points(vbase: float, notes: list[float]) -> float:
+def calculer_points(vbase: float, notes: list[int]) -> float:
     """
     Calcule la note finale d’un mouvement.
     :param vbase: valeur de base de la note
     :param notes: liste de notes
     :returns: valeur de la note finale
     """
+    #pour la fonction de calculer les points la list note est un nombre entier pas de nombre decimal
     try:
         valider_notes(notes)
 
         note_max = max(notes)
         note_min = min(notes)
 
+
         for i in range(len(notes)):
-            if notes[i] == note_max or note_min:
+            if notes[i] == note_max and note_min:
                 notes.remove(notes[i])
+        #il faut enlever les deux notes
 
         moyenne = sum(notes) / 9
+        # il y a maintenant seulement
         total = vbase + moyenne
         return total
 
